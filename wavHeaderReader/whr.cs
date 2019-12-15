@@ -3,8 +3,6 @@ using System.IO;
 
 namespace wavHeadReader
 {
-    // channels = 22; bitDepth = 34; freq = 24-27; bps = 28-31; dataSize = 36-39
-    //
     public class Wave
     {
         public byte channels;
