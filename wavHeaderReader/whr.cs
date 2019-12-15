@@ -14,7 +14,7 @@ namespace wavHeadReader
         public int dataSize;
         public int chunkSize;
         private byte[] header = new byte[44];
-        public void recieveFile(string path)
+        public void sendData(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
             {
@@ -23,7 +23,7 @@ namespace wavHeadReader
             }
             workWithFile();
         }
-        public void recieveFile(byte[] binary)
+        public void sendData(byte[] binary)
         {
             for (int i = 0; i < 44; i++)
             {
