@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace wavHeadReader
+namespace wavHeaderReader
 {
     public class Wave
     {
@@ -37,7 +37,6 @@ namespace wavHeadReader
             bitsPerSample = BitConverter.ToInt32(header, 28);
             dataSize = BitConverter.ToInt32(header, 36);
             chunkSize = BitConverter.ToInt32(header, 4);
-
         }
     }
 
