@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace whrtest
 {
@@ -11,7 +7,7 @@ namespace whrtest
     {
         static void Main(string[] args)
         {
-            byte[] a = File.ReadAllBytes("D:\\Downloads\\other\\SebastiAn - Thirst (2019) [Hi-Res stereo].zip");
+            byte[] a = File.ReadAllBytes("D:\\Downloads\\other\\spin-go\\MYD - Superdiscoteca (Extended).wav");
             Console.WriteLine("a");
             wavHeaderReader.Wave test = new wavHeaderReader.Wave();
             test.sendData(a);

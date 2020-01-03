@@ -12,6 +12,7 @@ namespace wavHeaderReader
         public int dataSize;
         public int chunkSize;
         private byte[] header = new byte[44];
+        //protected string path;
         public void sendData(string path)
         {
             using (FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read))
