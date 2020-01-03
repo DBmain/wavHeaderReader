@@ -35,7 +35,7 @@ namespace wavHeaderReader
             bitDepth = header[34];
             freq = BitConverter.ToInt32(header, 24);
             bitsPerSample = BitConverter.ToInt32(header, 28);
-            dataSize = BitConverter.ToInt32(header, 36);
+            dataSize = BitConverter.ToInt32(header, 40);
             chunkSize = BitConverter.ToInt32(header, 4);
         }
     }
