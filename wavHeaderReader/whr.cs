@@ -25,10 +25,6 @@ namespace wavHeaderReader
         }
         public void sendData(byte[] binary)
         {
-            for (int i = 0; i < 44; i++)
-            {
-                header[i] = binary[i];
-            }
             workWithFile(null, binary);
         }
         private void workWithFile(string path, byte[] bin)

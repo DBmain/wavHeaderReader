@@ -7,7 +7,7 @@ namespace whrtest
     {
         static void Main(string[] args)
         {
-            byte[] a = File.ReadAllBytes("D:\\Downloads\\other\\spin-go\\MYD - Superdiscoteca (Extended).wav");
+            byte[] a = File.ReadAllBytes("D:\\Downloads\\other\\spin-go\\MYD - Superdiscoteca (Extended)1.wav");
             Console.WriteLine("a");
             wavHeaderReader.Wave test = new wavHeaderReader.Wave();
             test.sendData(a);
