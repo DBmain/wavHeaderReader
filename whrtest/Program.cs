@@ -11,7 +11,7 @@ namespace whrtest
             Console.WriteLine("a");
             wavHeaderReader.Wave test = new wavHeaderReader.Wave();
             test.sendData(a);
-            Console.WriteLine(test.freq + " " + test.dataSize + " " + test.chunkSize + " " + test.channels + " " + test.bitDepth + " " + test.bitsPerSample);
+            Console.WriteLine(test.freq + " " + test.dataSize + " " + test.chunkSize + " " + test.channels + " " + test.bitDepth + " " + test.bitsPerSample + " " + test.dataStart + " " + test.dataEnd);
             Console.ReadKey();
         }
     }
