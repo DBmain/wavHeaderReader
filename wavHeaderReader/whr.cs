@@ -11,6 +11,7 @@ namespace wavHeaderReader
         public int bitsPerSample;
         public int dataSize;
         public int chunkSize;
+        public int dataOffset;
         private byte[] header = new byte[44];
         public void sendData(string path)
         {
@@ -36,12 +37,12 @@ namespace wavHeaderReader
             freq = BitConverter.ToInt32(header, 24);
             bitsPerSample = BitConverter.ToInt32(header, 28);
             byte[] fullFile;
-            int dataOffset = 0;
+            dataOffset = 44;
             if (BitConverter.ToInt32(header, 36) != 1635017060)
             {
                 if (path == null) fullFile = bin;
                 else fullFile = File.ReadAllBytes(path);
-                for (int i = 35; i < fullFile.Length; i++)
+                for (int i = 36; i < fullFile.Length; i++)
                 {
                     if (fullFile[i] == 0 && BitConverter.ToInt32(fullFile, i + 1) == 1635017060)
                     {
@@ -50,6 +51,7 @@ namespace wavHeaderReader
                     }
                 }
                 dataSize = BitConverter.ToInt32(fullFile, dataOffset + 4);
+                dataOffset = dataOffset + 8;
             }
             else dataSize = BitConverter.ToInt32(header, 40);
             chunkSize = BitConverter.ToInt32(header, 4);
